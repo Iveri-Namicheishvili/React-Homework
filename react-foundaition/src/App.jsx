@@ -1,47 +1,46 @@
-const reactDescriptions = ["Fundamental", "Crucial", "Core"];
-
-function getRandomInt() {
-  return Math.floor(Math.random() * 3);
-}
-
-function Header() {
-  return (
-    <header>
-      <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        ... React concepts you will need for almost any app you are going to
-        build!
-      </p>
-    </header>
-  );
-}
-function CoreConcept(props) {
-  return (
-    <li>
-      <h2>{props.title}</h2>
-      <p>{props.description}</p>
-    </li>
-  );
-}
+import { CORE_CONCEPTS } from "./data";
+import CoreConcept from "./components/CoreConcept";
+import Header from "./components/Header";
+import TabButton from "./components/TabButton";
 
 function App() {
   return (
     <div>
       <Header />
-      <li />
       <main>
         <section id="core-concepts">
-          <h2>core concepts</h2>
+          <h2>Core Concepts</h2>
           <ul>
-            <CoreConcept title="about me" description="im student in mziuri" />
             <CoreConcept
-              title="my hobby"
-              description="my hobby is play volleyball"
+              image={CORE_CONCEPTS[0].image}
+              title={CORE_CONCEPTS[0].title}
+              description={CORE_CONCEPTS[0].description}
             />
-            <CoreConcept title="grade" description="im in 11 grade" />
-            <CoreConcept title="location" description="i live in tbilisi" />
+            <CoreConcept
+              image={CORE_CONCEPTS[1].image}
+              title={CORE_CONCEPTS[1].title}
+              description={CORE_CONCEPTS[1].description}
+            />
+            <CoreConcept
+              image={CORE_CONCEPTS[2].image}
+              title={CORE_CONCEPTS[2].title}
+              description={CORE_CONCEPTS[2].description}
+            />
+            <CoreConcept
+              image={CORE_CONCEPTS[3].image}
+              title={CORE_CONCEPTS[3].title}
+              description={CORE_CONCEPTS[3].description}
+            />
           </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton />
+            <TabButton />
+            <TabButton />
+            <TabButton />
+          </menu>
         </section>
       </main>
     </div>
